@@ -3,9 +3,15 @@ import "./App.css";
 import CVForm from "./components/CVForm";
 
 function App() {
+  const [generalInfo, setGeneralInfo] = useState({});
   const [sections, setSections] = useState([]);
 
-  function onChange(e) {
+  function handleGeneralInfoChange(e) {
+    const { key } = e.target.dataset;
+    setGeneralInfo({ ...generalInfo, [key]: e.target.value });
+  }
+
+  function handleSectionChange(e) {
     const { key, section } = e.target.dataset;
     const oldSection = sections.find((value) => value.section == section);
     const newSection = oldSection ? { ...oldSection } : { section };
@@ -18,7 +24,10 @@ function App() {
 
   return (
     <>
-      <CVForm onChange={onChange}></CVForm>
+      <CVForm
+        handleGeneralInfoChange={handleGeneralInfoChange}
+        handleSectionChange={handleSectionChange}
+      ></CVForm>
     </>
   );
 }

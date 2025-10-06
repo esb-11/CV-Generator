@@ -1,9 +1,9 @@
 import GeneralInfoForm from "./CVForm/GeneralInfoForm";
 
-function CVForm({ onChange }) {
+function CVForm({ handleGeneralInfoChange, handleSectionChange }) {
   return (
     <>
-      <GeneralInfoForm onChange={onChange}></GeneralInfoForm>
+      <GeneralInfoForm onChange={handleGeneralInfoChange}></GeneralInfoForm>
     </>
   );
 }
