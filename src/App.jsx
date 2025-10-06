@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import CVForm from "./components/CVForm";
+import CVPreview from "./components/CVPreview";
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({});
@@ -28,6 +29,7 @@ function App() {
         handleGeneralInfoChange={handleGeneralInfoChange}
         handleSectionChange={handleSectionChange}
       ></CVForm>
+      <CVPreview sections={sections} generalInfo={generalInfo}></CVPreview>
     </>
   );
 }

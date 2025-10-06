@@ -1,0 +1,8 @@
+.cv-preview {
+  width: 794px;
+  height: 1123px;
+  background-color: white;
+  border: 2px grey solid;
+  box-shadow: 0 0 8px 8px grey;
+  padding: 48px;
+}
