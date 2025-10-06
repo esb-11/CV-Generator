@@ -1,4 +1,4 @@
-function InputText({ id, title, value, dataKey, onChange }) {
+function InputText({ id, title, value, dataKey, dataSection, onChange }) {
   return (
     <>
       <label htmlFor={id}>
@@ -10,6 +10,7 @@ function InputText({ id, title, value, dataKey, onChange }) {
           value={value}
           onChange={onChange}
           data-key={dataKey}
+          data-section={dataSection}
         />
       </label>
     </>

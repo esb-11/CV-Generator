@@ -10,6 +10,7 @@ function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
         value={name}
         onChange={onChange}
         dataKey={"name"}
+        dataSection={"generalInfo"}
       ></InputText>
       <InputText
         id={"cv-email"}
@@ -17,6 +18,7 @@ function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
         value={email}
         onChange={onChange}
         dataKey={"email"}
+        dataSection={"generalInfo"}
       ></InputText>
       <InputText
         id={"cv-phone-number"}
@@ -24,6 +26,7 @@ function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
         value={phoneNumber}
         onChange={onChange}
         dataKey={"phoneNumber"}
+        dataSection={"generalInfo"}
       ></InputText>
       <InputText
         id={"cv-address"}
@@ -31,6 +34,7 @@ function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
         value={address}
         onChange={onChange}
         dataKey={"address"}
+        dataSection={"generalInfo"}
       ></InputText>
     </form>
   );
