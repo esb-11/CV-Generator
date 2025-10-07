@@ -1,6 +1,6 @@
 import InputText from "./InputText";
 
-function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
+function GeneralInfoForm({ name, email, phoneNumber, address, onChange }) {  
   return (
     <form className="general-info">
       <h2>General Information</h2>
@@ -40,4 +40,4 @@ function GeneralInfoSection({ name, email, phoneNumber, address, onChange }) {
   );
 }
 
-export default GeneralInfoSection;
+export default GeneralInfoForm;

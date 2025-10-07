@@ -4,7 +4,7 @@ import GeneralInfoPreview from "./CVPreview/GeneralInfoPreview";
 function CVPreview({ generalInfo }) {
   return (
     <div className="cv-preview">
-      <GeneralInfoPreview {...generalInfo}></GeneralInfoPreview>
+      {/* <GeneralInfoPreview {...generalInfo}></GeneralInfoPreview> */}
     </div>
   );
 }

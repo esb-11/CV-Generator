@@ -1,10 +1,15 @@
 import GeneralInfoForm from "./CVForm/GeneralInfoForm";
+import EducationForm from "./CVForm/EducationForm";
 
-function CVForm({ handleGeneralInfoChange, handleSectionChange }) {
+function CVForm({ handleGeneralInfoChange, handleSectionChange, generalInfo }) {
   return (
-    <>
-      <GeneralInfoForm onChange={handleGeneralInfoChange}></GeneralInfoForm>
-    </>
+    <div className="cv-form">
+      <GeneralInfoForm
+        onChange={handleGeneralInfoChange}
+        {...generalInfo}
+      ></GeneralInfoForm>
+      <EducationForm onChange={handleSectionChange}></EducationForm>
+    </div>
   );
 }
 
