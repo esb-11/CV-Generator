@@ -1,9 +1,8 @@
 import InputText from "./InputText";
 
-function EducationForm({ onChange, school, degree, startDate, endDate }) {
+function EducationForm({ onChange, id, school, degree, startDate, endDate }) {
   return (
     <form className="education-form">
-      <h2>Education</h2>
       <InputText
         id={"education-school"}
         title={"School"}
@@ -11,6 +10,7 @@ function EducationForm({ onChange, school, degree, startDate, endDate }) {
         onChange={onChange}
         dataKey={"school"}
         dataSection={"education"}
+        dataId={id}
       ></InputText>
       <InputText
         id={"education-degree"}
@@ -19,6 +19,7 @@ function EducationForm({ onChange, school, degree, startDate, endDate }) {
         onChange={onChange}
         dataKey={"degree"}
         dataSection={"education"}
+        dataId={id}
       ></InputText>
       <InputText
         id={"education-start-date"}
@@ -27,6 +28,7 @@ function EducationForm({ onChange, school, degree, startDate, endDate }) {
         onChange={onChange}
         dataKey={"start"}
         dataSection={"education"}
+        dataId={id}
       ></InputText>
       <InputText
         id={"education-end-date"}
@@ -35,6 +37,7 @@ function EducationForm({ onChange, school, degree, startDate, endDate }) {
         onChange={onChange}
         dataKey={"end"}
         dataSection={"education"}
+        dataId={id}
       ></InputText>
     </form>
   );

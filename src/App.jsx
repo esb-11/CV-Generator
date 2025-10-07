@@ -6,24 +6,25 @@ import CVPreview from "./components/CVPreview";
 
 function App() {
   const [cvInfo, setCvInfo] = useState(exampleData);
-  const [sections, setSections] = useState([]);
 
   function handleGeneralInfoChange(e) {
-    const { key, section } = e.target.dataset;    
+    const { key, section } = e.target.dataset;
     const oldGeneralInfo = cvInfo[section] || {};
     const newGeneralInfo = { ...oldGeneralInfo, [key]: e.target.value };
     setCvInfo({ ...cvInfo, [section]: newGeneralInfo });
   }
 
   function handleSectionChange(e) {
-    const { key, section } = e.target.dataset;
-    const oldSection = sections.find((value) => value.section == section);
-    const newSection = oldSection ? { ...oldSection } : { section };
-    newSection[key] = e.target.value;
-    setSections([
-      newSection,
-      ...sections.filter((value) => value.section != section),
-    ]);
+    const { key, section, id } = e.target.dataset;
+    const oldSection = cvInfo[section];
+    const newSection = oldSection ? [...oldSection] : [];
+    const obj = newSection.find((value) => value.id == id);
+    obj[key] = e.target.value;
+
+    setCvInfo({
+      ...cvInfo,
+      [section]: newSection,
+    });
   }
 
   return (
@@ -32,8 +33,9 @@ function App() {
         handleGeneralInfoChange={handleGeneralInfoChange}
         handleSectionChange={handleSectionChange}
         generalInfo={cvInfo.generalInfo}
+        education={cvInfo.education}
       ></CVForm>
-      <CVPreview cvInfo={cvInfo} ></CVPreview>
+      <CVPreview cvInfo={cvInfo}></CVPreview>
     </>
   );
 }
