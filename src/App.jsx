@@ -37,6 +37,7 @@ function App() {
         handleSectionChange={handleSectionChange}
         generalInfo={cvInfo.generalInfo}
         education={cvInfo.education}
+        experience={cvInfo.experience}
       ></CVForm>
       <CVPreview cvInfo={cvInfo}></CVPreview>
     </>
