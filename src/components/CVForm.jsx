@@ -1,5 +1,6 @@
 import GeneralInfoForm from "./CVForm/GeneralInfoForm";
-import EducationSection from "./CVForm/EducationSection";
+import FormSection from "./CVForm/FormSection";
+import EducationForm from "./CVForm/EducationForm";
 
 function CVForm({
   handleGeneralInfoChange,
@@ -13,10 +14,11 @@ function CVForm({
         onChange={handleGeneralInfoChange}
         {...generalInfo}
       ></GeneralInfoForm>
-      <EducationSection
+      <FormSection
         onChange={handleSectionChange}
-        education={education}
-      ></EducationSection>
+        array={education}
+        Form={EducationForm}
+      ></FormSection>
     </div>
   );
 }

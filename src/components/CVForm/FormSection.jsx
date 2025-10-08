@@ -1,16 +1,26 @@
-import CollapsedForm from "./CollapsedForm";
+import { useState } from "react";
+import SectionList from "./SectionList";
 
-function FormSection({ array, onClick, titleKey }) {
+function FormSection({ array, onChange, Form }) {
+  const [currentId, setCurrentId] = useState(null);
+  const data = array.find((value) => value.id == currentId);
+
+  function handleClick(e) {
+    const { id } = e.target.dataset;
+    setCurrentId(id);
+  }
+
   return (
-    <div className="form-section">
-      {array.map((value) => (
-        <CollapsedForm
-          title={value[titleKey]}
-          onClick={onClick}
-          dataId={value.id}
-          key={value.id}
-        ></CollapsedForm>
-      ))}
+    <div className="education-section">
+      <h2>Education</h2>
+      {data && <Form onChange={onChange} {...data}></Form>}
+      {!data && (
+        <SectionList
+          array={array}
+          onClick={handleClick}
+          titleKey={"degree"}
+        ></SectionList>
+      )}
     </div>
   );
 }

@@ -20,6 +20,9 @@ function App() {
     const newSection = oldSection ? [...oldSection] : [];
     const obj = newSection.find((value) => value.id == id);
     obj[key] = e.target.value;
+    
+    console.log(e.target.dataset);
+    console.log(oldSection);
 
     setCvInfo({
       ...cvInfo,
