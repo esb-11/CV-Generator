@@ -5,7 +5,7 @@ import CVForm from "./components/CVForm";
 import CVPreview from "./components/CVPreview";
 
 function App() {
-  const [cvInfo, setCvInfo] = useState(exampleData);
+  const [cvInfo, setCvInfo] = useState(exampleData);  
 
   function handleGeneralInfoChange(e) {
     const { key, section } = e.target.dataset;
