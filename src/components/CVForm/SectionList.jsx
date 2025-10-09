@@ -1,6 +1,7 @@
 import CollapsedForm from "./CollapsedForm";
+import AddButton from "./AddButton";
 
-function SectionList({ array, onClick, titleKey }) {
+function SectionList({ array, onClick, titleKey, formName, onAdd }) {
   return (
     <div className="section-list">
       {array.map((value) => (
@@ -11,6 +12,7 @@ function SectionList({ array, onClick, titleKey }) {
           key={value.id}
         ></CollapsedForm>
       ))}
+      <AddButton formName={formName} onClick={onAdd}></AddButton>
     </div>
   );
 }

@@ -5,7 +5,9 @@ import CVForm from "./components/CVForm";
 import CVPreview from "./components/CVPreview";
 
 function App() {
-  const [cvInfo, setCvInfo] = useState(exampleData);  
+  const [cvInfo, setCvInfo] = useState(exampleData);
+
+  console.log(cvInfo);
 
   function handleGeneralInfoChange(e) {
     const { key, section } = e.target.dataset;
@@ -20,14 +22,43 @@ function App() {
     const newSection = oldSection ? [...oldSection] : [];
     const obj = newSection.find((value) => value.id == id);
     obj[key] = e.target.value;
-    
-    console.log(e.target.dataset);
-    console.log(oldSection);
 
     setCvInfo({
       ...cvInfo,
       [section]: newSection,
     });
+  }
+
+  function addForm(section, form) {
+    const array = cvInfo[section];
+    array.push(form);
+    setCvInfo({...cvInfo, [section]: array});
+  }
+
+  function addEducation() {
+    const obj = {
+      degree: "",
+      schoolName: "",
+      startDate: "",
+      endDate: "",
+      id: crypto.randomUUID(),
+    };
+    addForm("education", obj);
+    return obj.id;
+  }
+
+  function addExperience() {
+    const obj = {
+      companyName: "",
+      positionTitle: "",
+      location: "",
+      description: "",
+      startDate: "",
+      endDate: "",
+      id: crypto.randomUUID(),
+    };
+    addForm("experience", obj);
+    return obj.id;
   }
 
   return (
@@ -38,6 +69,8 @@ function App() {
         generalInfo={cvInfo.generalInfo}
         education={cvInfo.education}
         experience={cvInfo.experience}
+        addEducation={addEducation}
+        addExperience={addExperience}
       ></CVForm>
       <CVPreview cvInfo={cvInfo}></CVPreview>
     </>
