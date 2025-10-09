@@ -1,3 +1,4 @@
+import FormButtons from "./FormButtons";
 import InputText from "./InputText";
 
 function ExperienceForm({
@@ -11,7 +12,7 @@ function ExperienceForm({
   endDate,
 }) {
   return (
-    <form className="experience-form">
+    <form className="experience-form" onSubmit={(e) => e.preventDefault()}>
       <InputText
         id={"experience-company-name"}
         title={"Company Name"}
@@ -66,6 +67,7 @@ function ExperienceForm({
         dataSection={"experience"}
         dataId={id}
       ></InputText>
+      <FormButtons> </FormButtons>
     </form>
   );
 }

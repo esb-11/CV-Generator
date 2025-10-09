@@ -1,8 +1,16 @@
+import FormButtons from "./FormButtons";
 import InputText from "./InputText";
 
-function EducationForm({ onChange, id, schoolName, degree, startDate, endDate }) {
+function EducationForm({
+  onChange,
+  id,
+  schoolName,
+  degree,
+  startDate,
+  endDate,
+}) {
   return (
-    <form className="education-form">
+    <form className="education-form" onSubmit={(e) => e.preventDefault()}>
       <InputText
         id={"education-school"}
         title={"School"}
@@ -39,6 +47,7 @@ function EducationForm({ onChange, id, schoolName, degree, startDate, endDate })
         dataSection={"education"}
         dataId={id}
       ></InputText>
+      <FormButtons></FormButtons>
     </form>
   );
 }
