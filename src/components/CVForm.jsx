@@ -11,6 +11,7 @@ function CVForm({
   experience,
   addEducation,
   addExperience,
+  deleteForm,
 }) {
   return (
     <div className="cv-form">
@@ -22,17 +23,21 @@ function CVForm({
         onChange={handleSectionChange}
         array={education}
         Form={EducationForm}
-        formName={"Education"}
+        formName={"education"}
+        title={"Education"}
         titleKey={"degree"}
         addForm={addEducation}
+        deleteForm={deleteForm}
       ></FormSection>
       <FormSection
         onChange={handleSectionChange}
         array={experience}
         Form={ExperienceForm}
-        formName={"Experience"}
+        formName={"experience"}
+        title={"Experience"}
         titleKey={"positionTitle"}
         addForm={addExperience}
+        deleteForm={deleteForm}
       ></FormSection>
     </div>
   );

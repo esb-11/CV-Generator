@@ -8,7 +8,10 @@ function EducationForm({
   degree,
   startDate,
   endDate,
+  onSave,
+  onDelete,
 }) {
+
   return (
     <form className="education-form" onSubmit={(e) => e.preventDefault()}>
       <InputText
@@ -47,7 +50,7 @@ function EducationForm({
         dataSection={"education"}
         dataId={id}
       ></InputText>
-      <FormButtons></FormButtons>
+      <FormButtons onSave={onSave} onDelete={onDelete}></FormButtons>
     </form>
   );
 }

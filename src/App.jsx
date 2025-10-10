@@ -29,10 +29,16 @@ function App() {
     });
   }
 
+  function deleteForm(id, section) {
+    const oldArray = cvInfo[section];
+    const newArray = oldArray.filter((value) => value.id != id);
+    setCvInfo({ ...cvInfo, [section]: newArray });
+  }
+
   function addForm(section, form) {
     const array = cvInfo[section];
     array.push(form);
-    setCvInfo({...cvInfo, [section]: array});
+    setCvInfo({ ...cvInfo, [section]: array });
   }
 
   function addEducation() {
@@ -71,6 +77,7 @@ function App() {
         experience={cvInfo.experience}
         addEducation={addEducation}
         addExperience={addExperience}
+        deleteForm={deleteForm}
       ></CVForm>
       <CVPreview cvInfo={cvInfo}></CVPreview>
     </>

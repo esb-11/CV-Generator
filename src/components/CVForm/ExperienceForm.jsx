@@ -10,6 +10,8 @@ function ExperienceForm({
   description,
   startDate,
   endDate,
+  onSave,
+  onDelete,
 }) {
   return (
     <form className="experience-form" onSubmit={(e) => e.preventDefault()}>
@@ -67,7 +69,7 @@ function ExperienceForm({
         dataSection={"experience"}
         dataId={id}
       ></InputText>
-      <FormButtons> </FormButtons>
+      <FormButtons onSave={onSave} onDelete={onDelete}></FormButtons>
     </form>
   );
 }
