@@ -7,8 +7,6 @@ import CVPreview from "./components/CVPreview";
 function App() {
   const [cvInfo, setCvInfo] = useState(exampleData);
 
-  console.log(cvInfo);
-
   function handleGeneralInfoChange(e) {
     const { key, section } = e.target.dataset;
     const oldGeneralInfo = cvInfo[section] || {};
