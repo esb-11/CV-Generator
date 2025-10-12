@@ -79,7 +79,11 @@ function App() {
         addExperience={addExperience}
         deleteForm={deleteForm}
       ></CVForm>
-      <CVPreview cvInfo={cvInfo}></CVPreview>
+      <CVPreview
+        generalInfo={cvInfo.generalInfo}
+        education={cvInfo.education}
+        experience={cvInfo.experience}
+      ></CVPreview>
     </>
   );
 }
